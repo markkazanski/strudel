@@ -29,12 +29,22 @@ stack(
 
   // CHORDS
   n("<0, 9, 11, 14> <0, 8, 11, 14>")
-   .scale("A3:minor")
-    .s("sawtooth")
-   .decay(0.18).sustain(.7)
-    .delay(0.3)
-    .gain(.3).room(0.5).size(0.5)
-  .lpf(slider(1780 100, 5000, 10))
-  .orbit(3)
+   .scale("A4:minor")
+   .s("sawtooth")
+  .attack(0.3).release(0.5)
+  .lpf(sine.range(800, 1400).slow(8)).lpq(1.5) // Filter slowly opens and closes over 16 bars
+  .hpf(500) // Keeps the pad floating above the bass
+  .room(0.6).roomsize(0.8)
+  .gain(0.1).orbit(3),
+  
+  // LEAD
+ n(`1 2 4 0 1 2 _ -1 
+ _ _ _ _ ~ ~ ~ ~
+ 1 2 6 1 2 5 1 2
+ 4 _ _ _ ~ ~ 4 _`)
+  .slow(4)
+  .scale("A3:minor")
+  .sound("supersaw")
+  .room(1),
    
 ).cpm(124/4)
