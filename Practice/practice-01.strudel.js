@@ -1,0 +1,25 @@
+setcps(0.6)
+
+// 1. DRUMS (Subdivisions & Euclidean layers)
+KICK: s("bd*4")
+SNARE: s("~ sd ~ [sd sd]")
+HATS: s("hh*8").n("<0 1 2 3>").gain(0.5)
+CLAP: s("cp(3,8)").pan(0.2).gain(0.6)
+_PERC: s("perc(5,8)").pan(0.8).gain(0.4) // Muted initially with '_'
+
+// 2. BASS (Scale degrees & Subtractive Filtering)
+BASS: n("0 2 3 5")
+  .scale("C:minor")
+  .s("sawtooth")
+  .slow(2)
+  .lpf(600)
+
+// 3. ARP (LFO Modulation & Structural Reversal)
+ARP: n("0 2 4 7 4 2")
+  .scale("C:minor")
+  .s("triangle")
+  .fast(2)
+  .lpf(sine.range(300, 2500).slow(4))
+  .every(4, rev)
+  .room(0.4)
+  .gain(0.5)
