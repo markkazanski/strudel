@@ -16,6 +16,22 @@ $BASS: n("[0 0] [3 3 3] [2 2 2 2 2] [5 4]")
   .lpf(sine.range(300, 1200).slow(4))
   .lpq(20)
 
+// UK Garage BASS
+// $BASS: n(
+//     `[1 - 5 5] [- 1 - -] [1 - 5 -] [1 - 5 5]
+//      [1 - - -] [5 - - 5] [-] [1 - - -]
+//      [1 - - -] [- 5 - -] [1 - 5 -] [5 - 8 5]
+//      [1] [5 - - 1] [-] [1]
+//     `
+//   )
+//     .scale("C2:minor")
+//     .s("supersaw")
+//     .slow(4)
+//     .lpf(sine.range(200, 500).slow(4))
+//     .lpq(15)
+//     .attack(.01)
+//     .release(.2)
+
 // 3. ARP (LFO Modulation & Structural Reversal)
 $ARP: n("0 2 4 7 4 2")
   .scale("C:minor")
