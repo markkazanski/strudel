@@ -63,7 +63,9 @@ $LEAD: note(`
   .delay(0.3)
   .gain(.5)
 
+
 $NOTE: note("C4").sound("supersaw").lpf(sine.range(800, 1500).slow(8))
 
 $PLUCK: note("[C4 - - -]*4").slow(4)
   .sound("supersaw").attack(0.08).decay(.08).hpf(800).room(0.8)
+
